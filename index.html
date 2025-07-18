@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIOBAND - Băng gạc xanh sinh học</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: #333;
+        scroll-behavior: smooth; /* Thêm smooth scroll */
+      }
+
+      .text-primary {
+        color: #1a9373;
+      }
+
+      .bg-primary {
+        background-color: #1a9373;
+      }
+
+      .text-secondary {
+        color: #e63946;
+      }
+
+      .bg-secondary {
+        background-color: #e63946;
+      }
+
+      .product-card {
+        transition: all 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar {
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background-color: #f0f9f7;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+      }
+
+      .ingredient-item img {
+        transition: all 0.3s ease;
+      }
+
+      .ingredient-item:hover img {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <nav class="navbar fixed w-full z-50 bg-white/90 backdrop-blur-sm">
+      <div
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <a
+            href="#home"
+            class="text-2xl font-bold text-primary flex items-center"
+          >
+          <div class="md:w-1/4 flex justify-center">
+          <img
+            src="D:\Download\mặt sau 15x10 (1).png"
+            alt="Hộp sản phẩm BIOBAND màu xanh lá với hình ảnh miếng băng gạc, thiết kế tối giản trên nền trắng"
+            class="w-full h-30 max-w-lg md:max-w-xl rounded-lg"
+          />
+        </div>
+            <span class="mr-3"></span>
+            <span class="text-white bg-primary rounded-md px-2 py-1"
+              ></span
+            >
+          </a>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            href="#home"
+            class="text-primary font-medium hover:text-secondary transition"
+            >Trang chủ</a
+          >
+          <a href="#about" class="text-gray-600 hover:text-primary transition"
+            >Về BIOBAND</a
+          >
+          <a
+            href="#benefits"
+            class="text-gray-600 hover:text-primary transition"
+            >Lợi ích</a
+          >
+          <a
+            href="#products"
+            class="text-gray-600 hover:text-primary transition"
+            >Sản phẩm</a
+          >
+          <a
+            href="#ingredients"
+            class="text-gray-600 hover:text-primary transition"
+            >Thành phần</a
+          >
+          <a href="#who-for" class="text-gray-600 hover:text-primary transition"
+            >Đối tượng</a
+          >
+          <a href="#contact" class="text-gray-600 hover:text-primary transition"
+            >Liên hệ</a
+          >
+        </div>
+
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="text-primary focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-sm shadow-lg py-4"
+      >
+        <a
+          href="#home"
+          class="block px-6 py-2 text-primary font-medium hover:bg-gray-100 transition"
+          >Trang chủ</a
+        >
+        <a
+          href="#about"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition"
+          >Về BIOBAND</a
+        >
+        <a
+          href="#benefits"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition"
+          >Lợi ích</a
+        >
+        <a
+          href="#products"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition"
+          >Sản phẩm</a
+        >
+        <a
+          href="#ingredients"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition"
+          >Thành phần</a
+        >
+        <a
+          href="#who-for"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition"
+          >Đối tượng</a
+        >
+        <a
+          href="#contact"
+          class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition"
+          >Liên hệ</a
+        >
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="pt-32 pb-20 px-6 bg-gradient-to-r from-white to-green-50"
+    >
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-12 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            <span class="text-primary">BIOBAND</span> - Băng gạc xanh, chữa lành
+            nhanh
+          </h1>
+          <h2 class="text-2xl text-secondary mb-6">
+            Giải Pháp Đột Phá Chữa Lành Vết Thương Tự Nhiên & Nhanh Chóng
+          </h2>
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Trong cuộc sống hiện đại, vết thương là điều khó tránh khỏi. Nhưng
+            làm thế nào để vết thương lành nhanh chóng, an toàn, và không để lại
+            sẹo? Với BIOBAND – Băng Gạc Xanh Sinh Học, chúng tôi tự hào mang đến
+            một giải pháp tiên phong tại Việt Nam, thay đổi cách bạn chăm sóc và
+            phục hồi vết thương.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#products"
+              class="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition text-center"
+              >Khám phá sản phẩm</a
+            >
+            <a
+              href="#contact"
+              class="border border-primary text-primary px-6 py-3 rounded-md font-medium hover:bg-primary hover:text-white transition text-center"
+              >Liên hệ tư vấn</a
+            >
+          </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            src="D:\Download\mặt sau 15x10 (1).png"
+            alt="Hộp sản phẩm BIOBAND màu xanh lá với hình ảnh miếng băng gạc, thiết kế tối giản trên nền trắng"
+            class="w-full h-auto max-w-lg md:max-w-xl rounded-lg"
+          />
+        </div>
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Về <span class="text-primary">BIOBAND</span>
+          </h2>
+          <div class="w-20 mx-auto h-1 bg-primary mb-6"></div>
+          <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            BIOBAND không chỉ là một miếng băng gạc thông thường. Đây là một sản
+            phẩm băng gạc sinh học được nghiên cứu và phát triển dựa trên sự kết
+            hợp hài hòa giữa y học hiện đại và tinh hoa của các loại thảo dược
+            quý từ thiên nhiên. Chúng tôi tận dụng sức mạnh tự nhiên để tạo ra
+            một môi trường tối ưu cho quá trình tái tạo tế bào, giúp vết thương
+            lành nhanh vượt trội.
+          </p>
+        </div>
+
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">
+            Điều Gì Khiến <span class="text-primary">BIOBAND</span> Khác Biệt?
+          </h3>
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+              <div
+                class="flex items-start bg-green-50 p-6 rounded-lg shadow-sm"
+              >
+                <div class="flex-shrink-0 mr-4">
+                  <svg
+                    class="w-10 h-10 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-800 mb-2">
+                    Thành Phần 100% Tự Nhiên – An Toàn Tuyệt Đối
+                  </h4>
+                  <p class="text-gray-600">
+                    Không chứa chất bảo quản hay phụ gia hóa học, BIOBAND an
+                    toàn ngay cả với làn da nhạy cảm như trẻ nhỏ hoặc người có
+                    cơ địa dị ứng, mang đến sự yên tâm tuyệt đối cho người sử
+                    dụng.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start bg-green-50 p-6 rounded-lg shadow-sm"
+              >
+                <div class="flex-shrink-0 mr-4">
+                  <svg
+                    class="w-10 h-10 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-800 mb-2">
+                    Cơ Chế Tác Động Toàn Diện – Phục Hồi Vượt Trội
+                  </h4>
+                  <p class="text-gray-600">
+                    Các hoạt chất tự nhiên từ dầu Mù U và bột nghệ trắng tạo
+                    thành một "lá chắn" bảo vệ, ngăn chặn sự phát triển của vi
+                    khuẩn và giảm sưng viêm. Đồng thời, kích thích sản sinh
+                    collagen, giúp vết thương mau lành và hạn chế sẹo.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <img
+                src="D:\Download\Gemini_Generated_Image_o6nytzo6nytzo6ny.png"
+                alt="Cơ chế hoạt động băng gạc BIOBAND"
+                class="w-full h-auto max-w-lg rounded-lg shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <section id="benefits" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Lợi ích Nổi Bật Khi Sử Dụng
+            <span class="text-primary">BIOBAND</span>
+          </h2>
+          <div class="w-20 mx-auto h-1 bg-primary mb-6"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Không chỉ đơn thuần bảo vệ vết thương, BIOBAND còn mang lại những
+            lợi ích vượt trội giúp quá trình phục hồi diễn ra hiệu quả và nhanh
+            chóng.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center py-8 px-6 bg-white rounded-xl shadow-md">
+            <div class="feature-icon">
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              ✅ Phục hồi nhanh vượt trội
+            </h3>
+            <p class="text-gray-600">
+              Công nghệ Nano sinh học giúp dưỡng chất thẩm thấu sâu, hỗ trợ tái
+              tạo mô nhanh chóng và rút ngắn thời gian lành thương rõ rệt.
+            </p>
+          </div>
+
+          <div class="text-center py-8 px-6 bg-white rounded-xl shadow-md">
+            <div class="feature-icon">
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              🛡️ An toàn tuyệt đối cho mọi loại da
+            </h3>
+            <p class="text-gray-600">
+              Không chứa chất bảo quản hay phụ gia hóa học, BIOBAND an toàn ngay
+              cả với làn da nhạy cảm như trẻ nhỏ hoặc người có cơ địa dị ứng.
+            </p>
+          </div>
+
+          <div class="text-center py-8 px-6 bg-white rounded-xl shadow-md">
+            <div class="feature-icon">
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15l8-8m0 0l-8-8m8 8h-16"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              💧 Thấm hút tối ưu, ngăn ngừa nhiễm khuẩn
+            </h3>
+            <p class="text-gray-600">
+              Xơ dừa tự nhiên kết hợp công nghệ xử lý kháng khuẩn giúp hấp thụ
+              dịch nhanh, khô thoáng bề mặt và ngăn ngừa nguy cơ nhiễm trùng
+              hiệu quả.
+            </p>
+          </div>
+
+          <div class="text-center py-8 px-6 bg-white rounded-xl shadow-md">
+            <div class="feature-icon">
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2zm3-7h.01M12 14h.01M15 14h.01M8 17h.01M12 17h.01M15 17h.01"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              🩹 Hạn chế sẹo tối đa
+            </h3>
+            <p class="text-gray-600">
+              Các thành phần hoạt tính hỗ trợ quá trình tái tạo da, giúp vết sẹo
+              mờ hơn, ít lồi lõm, mang lại làn da mịn màng sau khi lành.
+            </p>
+          </div>
+
+          <div class="text-center py-8 px-6 bg-white rounded-xl shadow-md">
+            <div class="feature-icon">
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m-1.364-5.636l.707-.707M6.343 17.657l-.707.707M16 20h2.001M6.343 6.343l-4.242 4.243-1.415-1.414 4.243-4.243zm1.414 1.414L10 10.999M10 12l2 2 4-4"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              🌱 Thân thiện với môi trường
+            </h3>
+            <p class="text-gray-600">
+              Sử dụng nguồn nguyên liệu bền vững và có khả năng phân hủy sinh
+              học, BIOBAND góp phần bảo vệ hành tinh xanh của chúng ta.
+            </p>
+          </div>
+
+          <div class="text-center py-8 px-6 bg-white rounded-xl shadow-md">
+            <div class="feature-icon">
+              <svg
+                class="w-8 h-8 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              ✅ Được kiểm nghiệm và chứng nhận
+            </h3>
+            <p class="text-gray-600">
+              Sản phẩm đã trải qua quy trình kiểm nghiệm nghiêm ngặt và đạt các
+              tiêu chuẩn chất lượng, đảm bảo an toàn và hiệu quả cho người dùng.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <section id="products" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Dòng sản phẩm <span class="text-primary">BIOBAND</span>
+          </h2>
+          <div class="w-20 mx-auto h-1 bg-primary mb-6"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Thiết kế đa dạng, phù hợp với mọi loại vết thương từ nhỏ đến lớn,
+            đảm bảo sự chăm sóc toàn diện nhất cho gia đình bạn.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          <div
+            class="product-card bg-white rounded-lg shadow-lg hover:shadow-xl flex flex-col"
+          >
+            <div class="p-8 h-80 flex items-center justify-center">
+              <img
+                src="D:\Download\Mặt trước  15x10.png"
+                alt="Hộp BIOBAND size tiêu chuẩn màu xanh lá, đa năng cho nhiều loại vết thương"
+                class="max-w-full max-h-full object-contain"
+              />
+            </div>
+            <div class="px-6 pb-6 mt-auto">
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-semibold text-gray-800">
+                  BIOBAND Standard
+                </h3>
+                <span
+                  class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium"
+                  >Phổ biến</span
+                >
+              </div>
+              <p class="text-gray-600 mb-4">
+                Kích thước tiêu chuẩn, lý tưởng cho các vết thương vừa phải như
+                vết rách, vết mổ nhỏ.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-bold text-lg">400.000đ</span>
+                <button
+                  class="bg-primary text-white px-4 py-2 rounded-md text-sm hover:bg-opacity-90 transition"
+                >
+                  Thêm vào giỏ
+                </button>
+              </div>
+            </div>
+          </div>
+
+          
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <section id="ingredients" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Thành phần <span class="text-primary">tự nhiên</span> độc đáo
+          </h2>
+          <div class="w-20 mx-auto h-1 bg-primary mb-6"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            BIOBAND là sự kết hợp hoàn hảo những tinh túy từ thiên nhiên, được
+            chọn lọc kỹ lưỡng để tối ưu hóa khả năng chữa lành và bảo vệ vết
+            thương.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="ingredient-item text-center">
+            <div class="inline-block p-2 rounded-full bg-green-50 mb-6">
+              <img
+                src="C:\Users\admin\Desktop\BIOBAND\xo-dua.jpg"
+                alt="Hình ảnh xơ dừa từ trái dừa khô tự nhiên, nguyên liệu chính làm băng gạc BIOBAND"
+                class="w-40 h-40 rounded-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Xơ dừa</h3>
+            <p class="text-gray-600">
+              Không chỉ là chất liệu nền thân thiện với môi trường, xơ dừa còn
+              mang đến cấu trúc thoáng khí, giúp vết thương "thở", ngăn ngừa
+              tình trạng bí bách và nhiễm trùng. Đặc tính hấp thụ tốt của xơ dừa
+              giúp kiểm soát dịch tiết, giữ cho vùng da bị tổn thương luôn sạch
+              sẽ.
+            </p>
+          </div>
+
+          <div class="ingredient-item text-center">
+            <div class="inline-block p-2 rounded-full bg-green-50 mb-6">
+              <img
+                src="C:\Users\admin\Desktop\BIOBAND\Gemini_Generated_Image_k1cbfyk1cbfyk1cb.png"
+                alt="Hình ảnh chai tinh dầu mù u màu hổ phách, nguyên liệu chống viêm hiệu quả"
+                class="w-40 h-40 rounded-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Dầu mù u</h3>
+            <p class="text-gray-600">
+              Được mệnh danh là "vàng lỏng" trong điều trị da, dầu Mù U nổi
+              tiếng với khả năng kháng khuẩn, chống viêm mạnh mẽ. Nó kích thích
+              sự hình thành mô mới và thúc đẩy quá trình liền sẹo, giúp giảm
+              thiểu sẹo lồi, sẹo lõm. Dầu Mù U còn có đặc tính dưỡng ẩm, giữ cho
+              da luôn mềm mại và đàn hồi.
+            </p>
+          </div>
+
+          <div class="ingredient-item text-center">
+            <div class="inline-block p-2 rounded-full bg-green-50 mb-6">
+              <img
+                src="C:\Users\admin\Desktop\BIOBAND\nghe3.jpg"
+                alt="Hình ảnh bột nghệ trắng mịn trên thìa gỗ, nguyên liệu làm lành vết thương"
+                class="w-40 h-40 rounded-full object-cover"
+              />
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">
+              Bột nghệ trắng
+            </h3>
+            <p class="text-gray-600">
+              Một "thần dược" từ thiên nhiên với hoạt chất curcumin dồi dào,
+              mang lại khả năng chống oxy hóa, kháng viêm và giảm đau hiệu quả.
+              Bột củ nghệ trắng giúp làm dịu vùng da bị tổn thương, đẩy nhanh
+              quá trình làm sạch vết thương và hỗ trợ tái tạo làn da mới khỏe
+              mạnh.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <section id="who-for" class="py-20 bg-green-50">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <span class="text-primary">BIOBAND</span> Dành Cho Ai?
+        </h2>
+        <div class="w-20 mx-auto h-1 bg-primary mb-6"></div>
+        <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
+          BIOBAND là lựa chọn lý tưởng cho mọi gia đình, đặc biệt hữu ích cho:
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+          <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+            <svg
+              class="w-8 h-8 text-primary mr-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <p class="text-gray-700">
+              Các vết cắt, trầy xước nhỏ hàng ngày, vết bỏng nhẹ.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+            <svg
+              class="w-8 h-8 text-primary mr-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+              ></path>
+            </svg>
+            <p class="text-gray-700">
+              Vết thương sau phẫu thuật (theo chỉ dẫn của bác sĩ).
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+            <svg
+              class="w-8 h-8 text-primary mr-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M18 16v-1c0-4.418-3.582-8-8-8H3c-1.105 0-2 .895-2 2v10a2 2 0 002 2h15v-6zM3 11a2 2 0 012-2h10a2 2 0 012 2v6H5a2 2 0 00-2 2v-8z"
+              ></path>
+            </svg>
+            <p class="text-gray-700">
+              Vết thương da liễu cần làm dịu và phục hồi.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+            <svg
+              class="w-8 h-8 text-primary mr-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 11c0 1.657-3.582 3-8 3S4 12.657 4 11V3s3.582-3 8-3 8 3 8 3v8c0 1.657-3.582 3-8 3z"
+              ></path>
+            </svg>
+            <p class="text-gray-700">
+              Người có làn da nhạy cảm, dễ kích ứng với băng gạc thông thường.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+            <svg
+              class="w-8 h-8 text-primary mr-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 4.354a4 4 0 110 5.292M12 12c1.333 0 2.56.398 3.586 1.092L17.586 15A4 4 0 0121 19c0 1.105-.895 2-2 2H5c-1.105 0-2-.895-2-2a4 4 0 012.414-3.586L8.414 13.092C9.44 12.398 10.667 12 12 12z"
+              ></path>
+            </svg>
+            <p class="text-gray-700">
+              Gia đình muốn có giải pháp sơ cứu an toàn, hiệu quả ngay tại nhà.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md flex items-center">
+            <svg
+              class="w-8 h-8 text-primary mr-4 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+            </svg>
+            <p class="text-gray-700">
+              Những ai ưu tiên sản phẩm từ thiên nhiên.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <section id="commitment" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Lời Cam Kết Từ <span class="text-primary">BIOBAND</span>
+          </h2>
+          <div class="w-20 mx-auto h-1 bg-primary mb-6"></div>
+          <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Chúng tôi cam kết mang đến sản phẩm băng gạc sinh học chất lượng cao
+            nhất, được sản xuất theo quy trình nghiêm ngặt, đảm bảo an toàn và
+            hiệu quả tối ưu. BIOBAND không chỉ là một sản phẩm, mà là sự chăm
+            sóc tận tâm từ thiên nhiên, giúp bạn và gia đình luôn khỏe mạnh. Sức
+            khỏe và sự hài lòng của bạn là ưu tiên hàng đầu của chúng tôi.
+          </p>
+        </div>
+        
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <section class="py-16 bg-primary text-white text-center">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Đừng để vết thương làm gián đoạn cuộc sống của bạn!
+        </h2>
+        <p class="text-lg mb-8 max-w-3xl mx-auto">
+          Hãy trải nghiệm BIOBAND – Băng Gạc Xanh, chữa lành nhanh ngay hôm nay để cảm
+          nhận sự khác biệt trong quá trình chữa lành vết thương một cách an
+          toàn và tự nhiên.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a
+            href="#products"
+            class="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-lg"
+            >Mua Ngay</a
+          >
+          <a
+            href="#contact"
+            class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition shadow-lg"
+            >Tư Vấn Miễn Phí</a
+          >
+        </div>
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <section id="contact" class="py-20 bg-primary text-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Liên hệ với <span class="bg-white text-primary px-2">BIOBAND</span>
+          </h2>
+          <div class="w-20 mx-auto h-1 bg-white mb-6"></div>
+          <p class="max-w-2xl mx-auto">
+            Đặt hàng ngay hôm nay hoặc để lại thông tin để được tư vấn miễn phí
+            về sản phẩm băng gạc sinh học đột phá của chúng tôi.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 class="text-2xl font-semibold mb-6">Thông tin liên hệ</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-7 h-7 mr-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-lg">
+                  Hotline: <span class="font-semibold">+84 77 656 3501</span>
+                </p>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-7 h-7 mr-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-lg">
+                  Email: <span class="font-semibold">biobandstartup@gmail.com</span>
+                </p>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg
+                    class="w-7 h-7 mr-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    ></path>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    ></path>
+                  </svg>
+                </div>
+                <p class="text-lg">
+                  Địa chỉ:
+                  <span class="font-semibold"
+                    >ấp Hưng Chánh, xã Châu Hưng, tỉnh Vĩnh Long</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-lg text-gray-800">
+            <h3 class="text-2xl font-semibold mb-6 text-gray-800">
+              Gửi tin nhắn cho chúng tôi
+            </h3>
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2"
+                  >Họ tên</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Nhập họ tên của bạn"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Nhập email của bạn"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="phone" class="block text-gray-700 font-medium mb-2"
+                  >Số điện thoại</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Nhập số điện thoại của bạn"
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-2"
+                  >Nội dung</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Nội dung tin nhắn của bạn"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-white py-3 rounded-md font-medium hover:bg-opacity-90 transition"
+              >
+                Gửi tin nhắn
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="border-gray-200" />
+
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <a
+              href="#home"
+              class="text-2xl font-bold text-white flex items-center mb-4"
+            >
+              <span class="mr-2">BIO</span>
+              <span class="text-white bg-primary rounded-md px-2 py-1"
+                >BAND</span
+              >
+            </a>
+            <p class="text-gray-400">
+              Tiên phong trong công nghệ băng gạc sinh học từ thiên nhiên tại
+              Việt Nam. Mang lại giải pháp phục hồi vết thương an toàn, hiệu quả
+              và bền vững.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Sản phẩm</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#products"
+                  class="text-gray-400 hover:text-white transition"
+                  ></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#products"
+                  class="text-gray-400 hover:text-white transition"
+                  >BIOBAND Standard</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#products"
+                  class="text-gray-400 hover:text-white transition"
+                  ></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Liên kết nhanh</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-white transition"
+                  >Trang chủ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition"
+                  >Về chúng tôi</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#benefits"
+                  class="text-gray-400 hover:text-white transition"
+                  >Lợi ích</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#ingredients"
+                  class="text-gray-400 hover:text-white transition"
+                  >Thành phần</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-white transition"
+                  >Liên hệ</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Theo dõi chúng tôi</h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
+                aria-label="Facebook"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
+                aria-label="Instagram"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
+                aria-label="Twitter"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
+                aria-label="YouTube"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © <span id="current-year">2025</span> BIOBAND. Tất cả quyền được bảo
+            hộ.
+          </p>
+          <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition text-sm"
+              >Chính sách bảo mật</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition text-sm"
+              >Điều khoản sử dụng</a
+            >
+            <a
+              href="#"
+              class="text-gray-400 hover:text-white transition text-sm"
+              >Cookie Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when a link is clicked
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Update current year in footer
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
